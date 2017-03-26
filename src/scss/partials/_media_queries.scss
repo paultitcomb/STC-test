@@ -1,0 +1,42 @@
+// Under 700px it starts looking a little bit rubbish so we'll make some adjustments
+@media screen and (max-width: 700px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .col {
+        &-2 {
+            flex: 1;
+            padding: 0 0 $normal-padding;
+
+            .tile-1 {
+                .overlay h2 {
+                  font-size: $adjusted-hero-title-size;
+                }
+
+                .image-link img {
+                    position: static;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    .tile-2,
+    .tile-3 {
+      .overlay h2 {
+        font-size: $adjusted-hero-title-size;
+      }
+    }
+
+    .overlay {
+      left: $adjusted-offset-value;
+      top: $adjusted-offset-value;
+    }
+
+    .cta-overlay {
+      font-size: $adjusted-cta-size;
+      margin-top: $adjusted-padding;
+    }
+}

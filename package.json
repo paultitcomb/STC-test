@@ -1,0 +1,24 @@
+{
+  "name": "save_the_children_dev_test",
+  "version": "1.0.0",
+  "description": "Paul Titcomb developer test for Save the Children",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server -c ./bs-config.json",
+    "watch:css": "node-sass -w ./src/scss/main.scss ./dist/css/main.css --output-style compressed",
+    "build": "npm run build:css && npm run build:js && npm run uglify:js",
+    "build:css": "node-sass ./src/scss/main.scss ./dist/css/main.css --output-style compressed",
+    "build:js": "babel src/js/script.js --out-file dist/js/script.js",
+    "uglify:js": "uglifyjs dist/js/script.js -o dist/js/script.js"
+  },
+  "author": "Paul Titcomb",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "lite-server": "^2.3.0",
+    "node-sass": "^4.5.1",
+    "uglify-js": "^2.8.16"
+  }
+}

@@ -1,0 +1,74 @@
+.hero-link {
+  padding-right: $normal-padding;
+  display: flex;
+  flex-direction: column;
+}
+
+.tile {
+  position: relative;
+
+  &-1 {
+    flex: 1;
+    overflow: hidden;
+    .image-link {
+      img {
+        height: 100%;
+        width: auto;
+        position: absolute;
+        top: -9999px;
+        right: -9999px;
+        bottom: -9999px;
+        left: -9999px;
+        margin: auto;
+      }
+    }
+  }
+
+  &-2 {
+    padding-bottom: $normal-padding;
+  }
+}
+
+.image-link {
+  width: 100%;
+  display: block;
+  img {
+    width: 100%;
+  }
+}
+
+.overlay {
+  position: absolute;
+  left: $offset-value;
+  top: $offset-value;
+  width: 40%;
+  h2 {
+    background-color: $default-bg-color;
+    text-transform: uppercase;
+    display: inline;
+    line-height: 1.3;
+    // this is to keep the padding at the start of the box
+    box-shadow: $title-indent 0 0 $default-bg-color, -$title-indent 0 0 $default-bg-color;
+
+    .tile-1 & {
+      font-size: $hero-title-size;
+    }
+
+    .tile-2 &,
+    .tile-3 & {
+      font-size: $normal-title-size;
+    }
+  }
+}
+
+.cta-overlay {
+  background-color: $cta-color;
+  color: $cta-text-color;
+  font-size: $cta-size;
+  text-transform: uppercase;
+  display: table;
+  padding: 4%;
+  margin: $normal-padding 0 0 -0.5vw;
+  overflow: hidden;
+  white-space: nowrap;
+}
